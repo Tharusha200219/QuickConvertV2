@@ -1,0 +1,42 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+header,
+footer {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ad-banner {
+  max-width: 728px;
+  margin: 0 auto;
+}
+
+.ad-sidebar {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .ad-sidebar {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .ad-banner img {
+    max-width: 100%;
+    height: auto;
+  }
+}
