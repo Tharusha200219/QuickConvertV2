@@ -1,7 +1,32 @@
+import { useEffect } from "react";
 import ImageConverter from "./components/ImageConverter";
 import "./App.css";
 
 function App() {
+  // Load AdSense script on component mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const script = document.createElement("script");
+      script.src =
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+      script.async = true;
+      script.onload = () => {
+        // Initialize ads after script loads
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.error("AdSense initialization error:", e);
+        }
+      };
+      document.head.appendChild(script);
+
+      // Cleanup to avoid duplicate scripts
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, []);
+
   return (
     <div className="App">
       {/* Header with Banner Ad */}
@@ -10,12 +35,15 @@ function App() {
           <div className="row">
             <div className="col-12 mb-3">
               <div className="ad-banner text-center">
-                <img
-                  src="https://via.placeholder.com/728x90?text=Header+Ad"
-                  alt="Header advertisement"
-                  className="img-fluid rounded"
-                  style={{ maxWidth: "100%" }}
-                />
+                {/* AdSense Banner Ad */}
+                <ins
+                  className="adsbygoogle"
+                  style={{ display: "block" }}
+                  data-ad-client="pub-3905224620109224" // Replace with your publisher ID
+                  data-ad-slot="1234567890" // Replace with your ad slot ID
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                ></ins>
               </div>
             </div>
             <div className="col-12">
@@ -39,12 +67,15 @@ function App() {
           {/* Sidebar Ad */}
           <div className="col-lg-4 mb-4">
             <div className="ad-sidebar sticky-top">
-              <img
-                src="https://via.placeholder.com/300x600?text=Sidebar+Ad"
-                alt="Sidebar advertisement"
-                className="img-fluid rounded"
-                style={{ maxWidth: "100%" }}
-              />
+              {/* AdSense Skyscraper Ad */}
+              <ins
+                className="adsbygoogle"
+                style={{ display: "block" }}
+                data-ad-client="pub-3905224620109224" // Replace with your publisher ID
+                data-ad-slot="0987654321" // Replace with your ad slot ID
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
             </div>
           </div>
         </div>
@@ -56,12 +87,15 @@ function App() {
           <div className="row">
             <div className="col-12 mb-3">
               <div className="ad-banner text-center">
-                <img
-                  src="https://via.placeholder.com/728x90?text=Footer+Ad"
-                  alt="Footer advertisement"
-                  className="img-fluid rounded"
-                  style={{ maxWidth: "100%" }}
-                />
+                {/* AdSense Banner Ad */}
+                <ins
+                  className="adsbygoogle"
+                  style={{ display: "block" }}
+                  data-ad-client="pub-3905224620109224" // Replace with your publisher ID
+                  data-ad-slot="1122334455" // Replace with your ad slot ID
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                ></ins>
               </div>
             </div>
             <div className="col-12">
