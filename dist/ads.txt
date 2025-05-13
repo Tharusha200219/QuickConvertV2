@@ -1,0 +1,3 @@
+# ads.txt for Image Converter
+google.com, pub-3905224620109224, DIRECT, f08c47fec0942fa0
+media.net, 8CUX12345, DIRECT

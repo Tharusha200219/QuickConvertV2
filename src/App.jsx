@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ImageConverter from "./components/ImageConverter";
 import "./App.css";
-import { Analytics } from "@vercel/analytics/next";
+
 function App() {
   // Load AdSense script on component mount
   useEffect(() => {
